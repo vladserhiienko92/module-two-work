@@ -3,9 +3,11 @@
 Main SCSS
 	1. Imports.
 	2. General Styles.
-	3. 
-	4. 
-	5.   
+	3. Header
+	4. Main Slider
+	5. We create
+	6. Categories
+	7. We work
   
 **/
 
@@ -23,10 +25,14 @@ Main SCSS
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-	
+	font: 14px $font-family;
+	margin: 0;
+	padding: 0;
 }
 
 img {
@@ -36,7 +42,7 @@ img {
 
 .container {
 	width: 100%;
-	max-width: 1000px;
+	max-width: 1500px;
 	height: auto;
 	margin: 0 auto;
 }
@@ -45,18 +51,472 @@ img {
 	clear: both;
 }
 
-/* ----------------------------------------------------------- */
-/*  3. 
-/* ----------------------------------------------------------- */
-
-
-
-/* ----------------------------------------------------------- */
-/*  4. 
-/* ----------------------------------------------------------- */
-
-
+.transition {
+	-webkit-transition: all .5s ease-in-out;
+	   -moz-transition: all .5s ease-in-out;
+	    -ms-transition: all .5s ease-in-out;
+	     -o-transition: all .5s ease-in-out;
+	        transition: all .5s ease-in-out;
+}
 
 /* ----------------------------------------------------------- */
-/*  5. 
+/*  3. Header
 /* ----------------------------------------------------------- */
+
+.header-block {
+	padding-bottom: 47px;
+}
+
+.logo-block {
+	margin-top: 49px;
+	.logo-block__link {
+		display: inline-block;
+		padding-left: 31px;
+	}
+}
+
+.menu-block {
+	margin: 0;
+	padding-top: 73px;
+    padding-left: 13px;
+	list-style-type: none;
+	font-size: 0;
+}
+
+.menu-block__item {
+	display: inline-block;
+	margin-right: 75px;
+	&:last-child {
+		margin-right: 0;
+	}
+	.menu-block__link {
+		position: relative;
+		font-size: $header_size;
+		font-weight: $font_bold;
+		text-decoration: none;
+		color: $black_color;
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: -14px;
+			left: 0;
+			display: inline-block;
+			opacity: 0;
+			width: 100%;
+			height: 6px;
+			background: #f2f2f2;
+			@extend .transition;
+		}
+		&:hover:after {
+			opacity: 1;
+		}
+	}
+}
+
+/* ----------------------------------------------------------- */
+/*  4. Main Slider
+/* ----------------------------------------------------------- */
+
+#main-slider-block {
+	border-top: 1px solid #eff1f5;
+	border-bottom: 1px solid #eff1f5;
+}
+
+.main-slider {
+	position: relative;
+	background: url(../img/slider-image.png) no-repeat right top;
+	-webkit-background-size: auto;
+	     -o-background-size: auto;
+	        background-size: auto;
+	.slick-prev.slick-arrow {
+		position: absolute;
+		top: 30.9%;
+		left: 14.7%;
+		width: 72px;
+		height: 72px;
+		border: 1px solid #eff1f5;
+		border-bottom: none;
+		background: transparent;
+		font-size: 0;
+		outline: 0;
+		z-index: 9;
+		cursor: pointer;
+		@extend .transition;
+		&:after {
+			content: "\f105";
+			font-family: "FontAwesome";
+			font-size: 20px;
+			@extend .transition;
+		}
+		&:hover {
+			background: $blue_color;
+		}
+		&:hover:after {
+			color: $white_color
+		}
+	}
+	.slick-next.slick-arrow {
+		position: absolute;
+		bottom: 32.9%;
+		left: 14.7%;
+		width: 72px;
+		height: 72px;
+		border: 1px solid #eff1f5;
+		border-top: none;
+		background: transparent;
+		font-size: 0;
+		outline: 0;
+		z-index: 9;
+		cursor: pointer;
+		@extend .transition;
+		&:after {
+			content: "\f105";
+			font-family: "FontAwesome";
+			font-size: 20px;
+			@extend .transition;
+		}
+		&:hover {
+			background: $blue_color;
+		}
+		&:hover:after {
+			color: $white_color
+		}
+	}
+	.slick-dots {
+		position: absolute;
+		bottom: 3.8%;
+		left: 17%;
+		list-style-type: none;
+		font-size: 0;
+		li {
+			margin-right: 52px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		button {
+			background: transparent;
+			border: none;
+			outline: 0;
+			&:after {
+				display: inline-block;
+				font: $font_bold 18px $font-family;
+				color: $grey_color;
+				cursor: pointer;
+				@extend .transition;
+			}
+			&:hover:after {
+				color: $black_color;
+				text-decoration: line-through;
+			}
+		}
+		#slick-slide00 {
+			display: inline-block;
+			button:after {
+				content: "01";
+			}
+		}
+		#slick-slide01 {
+			display: inline-block;
+			button:after {
+				content: "02";
+			}
+		}
+		#slick-slide02 {
+			display: inline-block;
+			button:after {
+				content: "03";
+			}
+		}
+		#slick-slide03 {
+			display: inline-block;
+			button:after {
+				content: "04";
+			}
+		}
+	}
+}
+
+.main-slider__slides {
+	position: relative;
+	z-index: 1;
+}
+
+.main-slides {
+	padding: 333px 0px 352px 139px;
+	.main-slider__number {
+		display: inline-block;
+		vertical-align: middle;
+		width: 193px;
+		height: 193px;
+		font-size: 72px;
+		line-height: 193px;
+		text-align: center;
+		color: $white_color;
+		font-weight: $font-bold;
+		background: $blue_color;
+	}
+	.main-slides__header {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0;
+		font-size: 92px;
+		line-height: 125px;
+		color: $black_color;
+		padding-left: 35px;
+    	letter-spacing: 3.5px;
+	}	
+}
+
+
+/* ----------------------------------------------------------- */
+/*  5. We Create
+/* ----------------------------------------------------------- */
+
+#we-create {
+	padding-bottom: 80px;
+	background: url(../img/we-create.png) no-repeat right center;
+}
+
+.we-create-left {
+	padding-top: 189px;
+	.we-create-left__header {
+		font-size: 72px;
+		font-weight: $font_bold;
+		color: $grey_color;
+		margin: 0;
+	}
+
+	.we-create-left__text {
+		font-size: $text_size;
+		line-height: 48px;
+		color: $grey_color;
+		margin: 0;
+	}	
+}
+
+.we-create-right {
+	padding-left: 65px;
+	padding-top: 222px;
+	.we-create-right__header {
+		font-size: 105px;
+		line-height: 125px;
+		font-weight: $font_bold;
+		color: $black_color;
+		margin: 0;
+	}
+}
+
+
+/* ----------------------------------------------------------- */
+/*  6. Categories
+/* ----------------------------------------------------------- */
+
+.categories {
+	width: 100%;
+	font-size: 0;
+	.categories__item {
+		position: relative;
+		display: inline-block;
+		width: 25%;
+		height: 775px;
+		text-align: center;
+		text-decoration: none;
+		color: $white-color;
+		font-weight: $font_bold;
+		&:after {
+		    position: absolute;
+		    top: 23px;
+		    left: 15px;
+		    content: "";
+		    opacity: 0;
+		    display: inline-block;
+		    width: 266px;
+		    height: 690px;
+		    border: 21px solid #97d1eb;
+		    @extend .transition;
+		}
+		&:hover:after {
+			opacity: 1;
+		}
+	}
+}
+
+.categories__header {
+	font-size: 60px;
+	line-height: 775px;
+	margin: 0;
+}
+
+.categories--img1 {
+	background: url(../img/cat-img1.png) no-repeat center;
+}
+
+.categories--img2 {
+	background: url(../img/cat-img2.png) no-repeat center;
+}
+
+.categories--img3 {
+	background: url(../img/cat-img3.png) no-repeat center;
+}
+
+.categories--img4 {
+	background: url(../img/cat-img4.png) no-repeat center;
+}
+
+/* ----------------------------------------------------------- */
+/*  7. We Work
+/* ----------------------------------------------------------- */
+
+.we-work-subheader {
+	position: relative;
+	font-size: 16px;
+	font-weight: $font_bold;
+	color: $blue_color;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-top: 40px;
+	margin-bottom: 50px;
+	&:after {
+		position: absolute;
+		top: 8px;
+		left: 380px;
+		content: "";
+		display: inline-block;
+		width: 190px;
+		height: 1px;
+		background: $blue_color;
+	}
+	&:before {
+		position: absolute;
+		top: 8px;
+		right: 380px;
+		content: "";
+		display: inline-block;
+		width: 190px;
+		height: 1px;
+		background: $blue_color;
+	}
+}
+
+.we-work-bg {
+	height: 400px;
+		background: url(../img/we-work.png) no-repeat top;
+		-webkit-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+}
+
+.we-work-area {
+	position: relative;
+	text-align: center;
+	z-index: 1;
+	.we-work-area__header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: inline-block;
+		font-size: 60px;
+		font-weight: $font_bold;
+		color: $black_color;
+		z-index: 3;
+	}
+	.we-work-area__number {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: inline-block;
+		font-size: 222px;
+		font-weight: $font_bold;
+		color: $white_color;
+		z-index: 2;
+	}
+}
+
+/* ----------------------------------------------------------- */
+/*  7. Footer 
+/* ----------------------------------------------------------- */
+
+#contact {
+	font-size: 0;
+	margin-bottom: 30px;
+}
+
+.contact-us {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 100px;
+	width: 60%
+}
+
+.tab-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 50px;
+	.tab-list_item {
+		display: inline-block;
+		list-style-type: none;
+		font-size: 16px;
+		text-transform: uppercase;
+		font-weight: $font_bold;
+		color: $grey_color;
+		letter-spacing: 4px;
+		margin-right: 20px;
+		cursor: pointer;
+	}
+}
+
+.tab-content-form__input {
+	display: block;
+	width: 620px;
+	height: 52px;
+	border: none;
+	font-size: 36px;
+	font-weight: $font_bold;
+	color: #e4e6eb;
+	outline: 0;
+	border-bottom: 1px solid #e4e6eb;
+	margin-bottom: 50px;
+}
+
+::-webkit-input-placeholder {
+	color: #e4e6eb;
+}
+
+.tab-content-form__area {
+	display: block;
+	width: 620px;
+	height: 52px;
+	border: none;
+	font-size: 24px;
+	font-weight: $font_bold;
+	color: #e4e6eb;
+	outline: 0;
+	margin-bottom: 50px;
+}
+
+.contact-img {
+	display: inline-block;
+	width: 40%
+}
+
+/* ----------------------------------------------------------- */
+/*  8. Footer 
+/* ----------------------------------------------------------- */
+
+.footer-block {
+	padding-top: 77px;
+	text-align: center;
+	background: #0f0f0f;
+	min-height: 300px;
+	.footer-block__link {
+		margin-bottom: 35px;
+		display: inline-block;
+	}
+	.footer-block__text {
+		font-size: $text_size;
+		color: #5d5d5d;
+	}
+}

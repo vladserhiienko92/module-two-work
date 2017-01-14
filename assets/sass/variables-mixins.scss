@@ -10,7 +10,16 @@ Variables and Mixins SCSS
 /*  1. Variables
 /* ----------------------------------------------------------- */
 
-
+$black_color: #000;
+$grey_color: #bcc0cd;
+$blue_color: #97d1eb;
+$white_color: #fff;
+$font-family: 'Raleway', sans-serif;
+$header_size: 18px;
+$text_size: 14px;
+$font-bold: 800;
+$font-regular: 400;
+ 
 
 /* ----------------------------------------------------------- */
 /*  2. Mixins
